@@ -9,7 +9,7 @@
 -- License     :  BSD-style (see LICENSE)
 -- Maintainer  :  jeffrey.rosenbluth@gmail.com
 --
--- Graphics-Svg Core types and functions.
+-- svg-builder Core types and functions.
 --
 -------------------------------------------------------------------------------
 

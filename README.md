@@ -1,4 +1,4 @@
-svg-builder [![Hackage](https://img.shields.io/hackage/v/lucid-svg.svg?style=flat)](https://hackage.haskell.org/package/svg-builder)
+svg-builder [![Hackage](https://img.shields.io/hackage/v/svg-builder.svg?style=flat)](https://hackage.haskell.org/package/svg-builder)
 =========
 Simple DSL for writing fast SVG.
 
