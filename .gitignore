@@ -1,0 +1,30 @@
+# Example executables
+examples/Explode
+examples/LineStyles
+examples/Pentaflake
+examples/AttrTest
+examples/FillRule
+examples/Temp
+examples/Opacity
+examples/Clipping
+examples/Text
+examples/TextScaling
+examples/TextSize
+# This is just used as scratch space
+examples/Temp.hs
+
+dist
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+.virthualenv
+*~
+.hsenv_*
+dist_*
+history
+TAGS
+.cabal-sandbox
+cabal.sandbox.config
+.stack-work
