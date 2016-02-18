@@ -25,7 +25,6 @@ module Graphics.Svg
   , prettyText
   ) where
 
-import           Data.Functor.Identity
 import           Data.Int               (Int64)
 import           Data.Monoid
 import           Data.Text.Lazy         as LT
