@@ -1,5 +1,5 @@
 name:                svg-builder
-version:             0.1.0.1
+version:             0.1.0.2
 synopsis:            DSL for building SVG.
 description:         Fast, easy to write SVG.
 homepage:            http://github.com/jeffreyrosenbluth/svg-builder.git
@@ -14,7 +14,7 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 
 library
-  ghc-options:         -Wall -rtsopts -O2 -fsimpl-tick-factor=110
+  ghc-options:         -Wall -fsimpl-tick-factor=200
   exposed-modules:     Graphics.Svg,
                        Graphics.Svg.Core,
                        Graphics.Svg.Path,
