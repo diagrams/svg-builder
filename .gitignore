@@ -14,6 +14,8 @@ examples/TextSize
 examples/Temp.hs
 
 dist
+dist-newstyle
+.ghc.environment*
 cabal-dev
 *.o
 *.hi
