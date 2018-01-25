@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP               #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeFamilies      #-}
@@ -39,7 +40,8 @@ import           Data.ByteString.Lazy (ByteString)
 import           Data.Hashable (Hashable(..))
 import           Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as M
-import           Data.Monoid
+import           Data.Monoid (Monoid(..))
+import           Data.Semigroup (Semigroup(..))
 import           Data.String
 import           Data.Text (Text)
 import qualified Data.Text.Lazy as LT
@@ -61,9 +63,14 @@ newtype Element = Element (HashMap Text Text -> Builder)
 instance Show Element where
   show e = LT.unpack . renderText $ e
 
+instance Semigroup Element where
+  Element e1 <> Element e2 = Element (e1 <> e2)
+
 instance Monoid Element where
   mempty = Element mempty
-  mappend (Element e1) (Element e2) = Element (e1 <> e2)
+#if !(MIN_VERSION_base(4,11,0))
+  mappend = (<>)
+#endif
 
 instance IsString Element where
   fromString = toElement
@@ -140,7 +147,7 @@ makeElementNoEnd name = Element $ \a -> go a
 
 -- | Folding and monoidally appending attributes.
 foldlMapWithKey :: Monoid m => (k -> v -> m) -> HashMap k v -> m
-foldlMapWithKey f = M.foldlWithKey' (\m k v -> m <> f k v) mempty
+foldlMapWithKey f = M.foldlWithKey' (\m k v -> m `mappend` f k v) mempty
 
 s2b :: String -> Builder
 s2b = BB.fromString
