@@ -40,7 +40,9 @@ import           Data.ByteString.Lazy (ByteString)
 import           Data.Hashable (Hashable(..))
 import           Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as M
+#if __GLASGOW_HASKELL__ != 710
 import           Data.Monoid (Monoid(..))
+#endif
 import           Data.Semigroup (Semigroup(..))
 import           Data.String
 import           Data.Text (Text)
