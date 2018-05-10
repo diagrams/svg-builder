@@ -1,6 +1,5 @@
 name:                svg-builder
-version:             0.1.0.2
-x-revision:          1
+version:             0.1.1
 synopsis:            DSL for building SVG.
 description:         Fast, easy to write SVG.
 homepage:            https://github.com/diagrams/svg-builder.git
