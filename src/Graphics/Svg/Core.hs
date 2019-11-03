@@ -40,9 +40,7 @@ import           Data.ByteString.Lazy (ByteString)
 import           Data.Hashable (Hashable(..))
 import           Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as M
-#if !MIN_VERSION_base(4,8,0)
 import           Data.Monoid (Monoid(..))
-#endif
 import           Data.Semigroup (Semigroup(..))
 import           Data.String
 import           Data.Text (Text)
@@ -65,10 +63,13 @@ newtype Element = Element (HashMap Text Text -> Builder)
 instance Show Element where
   show e = LT.unpack . renderText $ e
 
-instance Semigroup Element where
+-- using qualified name we make the import not redundant,
+-- even when Semigroup or Monoid are in Prelude
+
+instance Data.Semigroup.Semigroup Element where
   Element e1 <> Element e2 = Element (e1 <> e2)
 
-instance Monoid Element where
+instance Data.Monoid.Monoid Element where
   mempty = Element mempty
 #if !(MIN_VERSION_base(4,11,0))
   mappend = (<>)
