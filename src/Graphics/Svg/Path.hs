@@ -20,10 +20,14 @@ import qualified Data.Text                        as T
 import           Data.Text.Lazy                   (toStrict)
 import           Data.Text.Lazy.Builder           (toLazyText)
 import           Data.Text.Lazy.Builder.RealFloat
+import           Data.Text.Lazy.Builder.Int       (decimal)
 
 -- | Convert a number to Text.
 toText :: RealFloat a => a -> Text
 toText = toStrict . toLazyText . formatRealFloat Fixed (Just 4)
+
+toTextIntegral :: Integral a => a -> Text
+toTextIntegral = toStrict . toLazyText . decimal
 
 -- | moveto (absolute)
 mA :: RealFloat a =>  a -> a -> Text
@@ -98,16 +102,16 @@ tR :: RealFloat a =>  a -> a -> Text
 tR x y = T.concat [ "t ", toText x, ",", toText y, " "]
 
 -- | Arc (absolute)
-aA :: RealFloat a =>  a -> a -> a -> a -> a -> a -> a -> Text
+aA :: (RealFloat a, Integral b) =>  a -> a -> a -> b -> b -> a -> a -> Text
 aA rx ry xrot largeFlag sweepFlag x y = T.concat
-  [ "A ", toText rx, ",", toText ry, " ", toText xrot, " ", toText largeFlag
-  , " ", toText sweepFlag, " ", toText x, " ", toText y, " "]
+  [ "A ", toText rx, ",", toText ry, " ", toText xrot, " ", toTextIntegral largeFlag
+  , " ", toTextIntegral sweepFlag, " ", toText x, " ", toText y, " "]
 
 -- | Arc (relative)
-aR :: RealFloat a =>  a -> a -> a -> a -> a -> a -> a -> Text
+aR :: (RealFloat a, Integral b) =>  a -> a -> a -> b -> b -> a -> a -> Text
 aR rx ry xrot largeFlag sweepFlag x y = T.concat
-  [ "a ", toText rx, ",", toText ry, " ", toText xrot, " ", toText largeFlag
-  , " ", toText sweepFlag, " ", toText x, " ", toText y, " "]
+  [ "a ", toText rx, ",", toText ry, " ", toText xrot, " ", toTextIntegral largeFlag
+  , " ", toTextIntegral sweepFlag, " ", toText x, " ", toText y, " "]
 
 -- | closepath
 z :: Text
