@@ -1,3 +1,7 @@
+* 0.1.1-r6 (1 Sep 2022)
+
+- Allow `base-4.17`, test with GHC 9.4
+
 * 0.1.1-r5 (8 Jan 2022)
 
 - Allow `text-2.0`
