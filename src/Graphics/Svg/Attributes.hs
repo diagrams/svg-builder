@@ -21,8 +21,8 @@ module Graphics.Svg.Attributes
 import Graphics.Svg.Core
 import Data.Text (Text)
 
--- | Make an 'Attribute' from it's value constructor and it's text value.
---   by combining an 'AttrTag' with it's value.
+-- | Make an 'Attribute' from its value constructor and its text value.
+--   by combining an 'AttrTag' with its value.
 --
 -- > [bindAttr Width "100%, bindAttr Height "100%", bindAttr Fill "red"]
 bindAttr :: AttrTag -> Text -> Attribute
@@ -36,7 +36,7 @@ infix 4  <<-
 (<<-) :: AttrTag -> Text -> Attribute
 (<<-) = bindAttr
 
--- | Infix version of 'bindAttr' with it's arguments reversed.
+-- | Infix version of 'bindAttr' with its arguments reversed.
 --
 -- > ["100%" ->> Width_, "100%" ->> Height_, "red" ->> Fill_]
 infix 4  ->>
