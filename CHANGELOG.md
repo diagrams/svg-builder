@@ -1,3 +1,7 @@
+* 0.1.1-r7 (23 May 2023)
+
+- Allow `base-4.18`, test with GHC 9.6
+
 * 0.1.1-r6 (1 Sep 2022)
 
 - Allow `base-4.17`, test with GHC 9.4
