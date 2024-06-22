@@ -1,3 +1,7 @@
+* 0.1.1-r9 (22 June 2024)
+
+- Allow `base-4.20` and test on GHC 9.10
+
 * 0.1.1-r8 (15 Jan 2024)
 
 - Allow `base-4.19`, `bytestring-0.12`, and `text-2.1`
