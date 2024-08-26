@@ -1,3 +1,7 @@
+* 0.1.1-r10 (26 August 2024)
+
+- Allow `hashable-1.5`
+
 * 0.1.1-r9 (22 June 2024)
 
 - Allow `base-4.20` and test on GHC 9.10
