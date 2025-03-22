@@ -1,3 +1,7 @@
+* 0.1.1-r11 (22 March 2025)
+
+- Allow `base-4.21` (GHC 9.12)
+
 * 0.1.1-r10 (26 August 2024)
 
 - Allow `hashable-1.5`
