@@ -61,13 +61,13 @@ vR dy = T.concat ["v ", toText dy, " "]
 cA :: RealFloat a =>  a -> a -> a -> a -> a -> a -> Text
 cA c1x c1y c2x c2y x y = T.concat
   [ "C ", toText c1x, ",", toText c1y, " ", toText c2x, ","
-  , toText c2y, " ", toText x, " ", toText y]
+  , toText c2y, " ", toText x, " ", toText y, " "]
 
 -- | Cubic Bezier curve (relative)
 cR :: RealFloat a =>  a -> a -> a -> a -> a -> a -> Text
 cR dc1x dc1y dc2x dc2y dx dy = T.concat
   [ "c ", toText dc1x, ",", toText dc1y, " ", toText dc2x
-  , ",", toText dc2y, " ", toText dx, " ", toText dy]
+  , ",", toText dc2y, " ", toText dx, " ", toText dy, " "]
 
 -- | Smooth Cubic Bezier curve (absolute)
 sA :: RealFloat a =>  a -> a -> a -> a -> Text
