@@ -1,3 +1,7 @@
+* 0.1.1-r12 (8 Oct 2026)
+
+- Allow `base-4.22` (GHC 9.14)
+
 * 0.1.1-r11 (22 March 2025)
 
 - Allow `base-4.21` (GHC 9.12)
